@@ -22,10 +22,18 @@ MainWindow::MainWindow(QWidget *parent)
     hot_key.hide_find_words = new QShortcut(this);
     hot_key.hide_find_words->setKey(Qt::CTRL + Qt::ALT + Qt::Key_F);
 
+    hot_key.save_file = new QShortcut(this);
+    hot_key.save_file->setKey(Qt::CTRL + Qt::Key_S);
+
+    hot_key.open_file = new QShortcut(this);
+    hot_key.open_file->setKey(Qt::CTRL + Qt::Key_O);
+
     connect(hot_key.add_launch_button, SIGNAL(activated()), this, SLOT(addLaunchButton()));
     connect(hot_key.hide_launch_button, SIGNAL(activated()), this, SLOT(hideLaunchButton()));
     connect(hot_key.find_words, SIGNAL(activated()), this, SLOT(launchFindWords()));
     connect(hot_key.hide_find_words, SIGNAL(activated()), this, SLOT(hideFindWords()));
+    connect(hot_key.save_file, SIGNAL(activated()), this, SLOT(saveFile()));
+    connect(hot_key.open_file, SIGNAL(activated()), this, SLOT(openFile()));
 }
 
 MainWindow::~MainWindow()
@@ -86,4 +94,43 @@ void MainWindow::hideFindWords() {
         delete launch_finding_line_edit;
         hot_key.isLaunchLineEditAdded = false;
     }
+}
+
+void MainWindow::saveFile() {
+    QString filename = QFileDialog::getSaveFileName(
+                        this,
+                        tr("Сохранить файл"),
+                        QDir::currentPath(),
+                        nullptr);
+
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+
+        QFile out(filename);
+        if( out.open(QIODevice::WriteOnly)) {
+            QTextStream stream( &out );
+            stream << QObject::trUtf8(ui->plainTextEdit->toPlainText().toStdString().c_str());
+            out.close();
+        }
+
+        QFile in(filename);
+        if( in.open(QIODevice::ReadOnly)) {
+            QTextStream stream(&in);
+            qDebug() << stream.readAll();
+            in.close();
+        }
+}
+
+void MainWindow::openFile() {
+    QString filename = QFileDialog::getOpenFileName(
+                        this,
+                        tr("Открыть файл"),
+                        QDir::currentPath(),
+                        nullptr);
+
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+
+    QFile in(filename);
+    in.open(QIODevice::ReadOnly | QIODevice::Text);
+    auto text = in.readAll();
+    ui->plainTextEdit->setPlainText(text);
 }

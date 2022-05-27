@@ -8,6 +8,11 @@
 #include <QtWebEngineWidgets>
 #include <QVBoxLayout>
 #include <QLineEdit>
+#include <QDataStream>
+#include <QTextCodec>
+#include <QFile>
+#include <QFileDialog>
+#include <QDebug>
 
 #include "highlighter.h"
 
@@ -24,6 +29,9 @@ struct HotKeys {
 
     QShortcut *find_words = nullptr;
     QShortcut *hide_find_words = nullptr;
+
+    QShortcut *save_file = nullptr;
+    QShortcut *open_file = nullptr;
 };
 
 struct Highlighter {
@@ -55,5 +63,8 @@ private slots:
     void launchFindWords();
     void findWords();
     void hideFindWords();
+
+    void saveFile();
+    void openFile();
 };
 #endif // MAINWINDOW_H

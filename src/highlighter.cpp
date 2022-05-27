@@ -5,13 +5,13 @@ HtmlHighLighter::HtmlHighLighter(QTextDocument *parent)
 {
     HighlightingRule rule;
 
-    edgeTagFormat.setForeground(QBrush(QColor("#32a9dd")));
-    insideTagFormat.setForeground(Qt::blue);
+    edgeTagFormat.setForeground(QBrush(QColor("#1a5e34")));
+    insideTagFormat.setForeground(QBrush(QColor("#1a992d")));
     insideTagFormat.setFontWeight(QFont::Bold);
     openTag = QRegExp("<");
     closeTag = QRegExp(">");
 
-    tagsFormat.setForeground(Qt::darkBlue);
+    tagsFormat.setForeground(QBrush(QColor("#19806f")));
     tagsFormat.setFontWeight(QFont::Bold);
 
     QStringList keywordPatterns;
