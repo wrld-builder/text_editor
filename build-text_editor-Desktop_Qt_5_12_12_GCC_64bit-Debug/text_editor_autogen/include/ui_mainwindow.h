@@ -36,6 +36,7 @@ public:
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         plainTextEdit = new QPlainTextEdit(centralwidget);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
+        plainTextEdit->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(plainTextEdit, 0, 0, 1, 1);
 

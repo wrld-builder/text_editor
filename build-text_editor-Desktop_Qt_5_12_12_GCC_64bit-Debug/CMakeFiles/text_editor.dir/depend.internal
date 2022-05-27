@@ -113,8 +113,11 @@ CMakeFiles/text_editor.dir/highlighter.cpp.o
 CMakeFiles/text_editor.dir/main.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QByteArray
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCryptographicHash
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDataStream
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDateTime
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QEvent
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFlags
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QHash
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QIODevice
@@ -133,6 +136,7 @@ CMakeFiles/text_editor.dir/main.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QSizeF
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QString
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QStringList
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QTextCodec
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QUrl
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariant
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariantList
@@ -650,6 +654,7 @@ CMakeFiles/text_editor.dir/main.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWebEngineWidgets/qwebengineview.h
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QApplication
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QCommonStyle
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QFileDialog
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLayout
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLineEdit
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QMainWindow
@@ -795,8 +800,11 @@ CMakeFiles/text_editor.dir/main.cpp.o
 CMakeFiles/text_editor.dir/mainwindow.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QByteArray
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCryptographicHash
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDataStream
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDateTime
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QEvent
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFlags
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QHash
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QIODevice
@@ -815,6 +823,7 @@ CMakeFiles/text_editor.dir/mainwindow.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QSizeF
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QString
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QStringList
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QTextCodec
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QUrl
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariant
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariantList
@@ -1332,6 +1341,7 @@ CMakeFiles/text_editor.dir/mainwindow.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWebEngineWidgets/qwebengineview.h
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QApplication
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QCommonStyle
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QFileDialog
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QGridLayout
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLayout
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLineEdit
@@ -1480,8 +1490,11 @@ CMakeFiles/text_editor.dir/mainwindow.cpp.o
 CMakeFiles/text_editor.dir/text_editor_autogen/mocs_compilation.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QByteArray
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QCryptographicHash
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDataStream
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDateTime
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QEvent
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFlags
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QHash
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QIODevice
@@ -1500,6 +1513,7 @@ CMakeFiles/text_editor.dir/text_editor_autogen/mocs_compilation.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QSizeF
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QString
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QStringList
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QTextCodec
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QUrl
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariant
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVariantList
@@ -2016,6 +2030,7 @@ CMakeFiles/text_editor.dir/text_editor_autogen/mocs_compilation.cpp.o
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWebEngineWidgets/qwebenginesettings.h
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWebEngineWidgets/qwebengineview.h
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QCommonStyle
+ /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QFileDialog
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLayout
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLineEdit
  /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QMainWindow

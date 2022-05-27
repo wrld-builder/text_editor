@@ -14,13 +14,25 @@ qbytearray.h
 qcryptographichash.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcryptographichash.h
 
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDataStream
+qdatastream.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdatastream.h
+
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDateTime
 qdatetime.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdatetime.h
 
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QDebug
+qdebug.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qdebug.h
+
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QEvent
 qcoreevent.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qcoreevent.h
+
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFile
+qfile.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qfile.h
 
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QFlags
 qflags.h
@@ -93,6 +105,10 @@ qstring.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QStringList
 qstringlist.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qstringlist.h
+
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QTextCodec
+qtextcodec.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qtextcodec.h
 
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QUrl
 qurl.h
@@ -5300,6 +5316,10 @@ qapplication.h
 qcommonstyle.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qcommonstyle.h
 
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QFileDialog
+qfiledialog.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qfiledialog.h
+
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QGridLayout
 qgridlayout.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qgridlayout.h
@@ -6782,10 +6802,6 @@ EWIEGA46WW/moc_highlighter.cpp
 EWIEGA46WW/moc_mainwindow.cpp
 /home/logbaby/cxx/build-text_editor-Desktop_Qt_5_12_12_GCC_64bit-Debug/text_editor_autogen/EWIEGA46WW/moc_mainwindow.cpp
 
-/home/logbaby/cxx/text_editor/highlighter.cpp
-highlighter.h
-/home/logbaby/cxx/text_editor/highlighter.h
-
 /home/logbaby/cxx/text_editor/highlighter.h
 QSyntaxHighlighter
 -
@@ -6820,6 +6836,16 @@ QtWebEngineWidgets
 QVBoxLayout
 -
 QLineEdit
+-
+QDataStream
+-
+QTextCodec
+-
+QFile
+-
+QFileDialog
+-
+QDebug
 -
 highlighter.h
 /home/logbaby/cxx/text_editor/highlighter.h
