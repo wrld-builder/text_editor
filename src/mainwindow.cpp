@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setRightTab();
+
     highlight.m_syntaxHighLighter = new SyntaxHighlighter(ui->plainTextEdit->document());
     highlight.m_htmlHightLighter = new HtmlHighLighter(ui->plainTextEdit->document());
 
@@ -133,4 +135,8 @@ void MainWindow::openFile() {
     in.open(QIODevice::ReadOnly | QIODevice::Text);
     auto text = in.readAll();
     ui->plainTextEdit->setPlainText(text);
+}
+
+void MainWindow::setRightTab() {
+    ui->plainTextEdit->setTabStopDistance(QFontMetricsF(ui->plainTextEdit->font()).horizontalAdvance(' ') * 4);
 }

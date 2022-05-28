@@ -32,6 +32,7 @@ struct HotKeys {
 
     QShortcut *save_file = nullptr;
     QShortcut *open_file = nullptr;
+    QShortcut *tab = nullptr;
 };
 
 struct Highlighter {
@@ -46,6 +47,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    void setRightTab();
 
 private:
     Ui::MainWindow *ui;
