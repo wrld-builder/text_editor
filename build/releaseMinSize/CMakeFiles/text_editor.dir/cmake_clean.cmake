@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/text_editor_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/text_editor_autogen.dir/ParseCache.txt"
   "text_editor_autogen"
+  "CMakeFiles/text_editor.dir/advancedmenu.cpp.o"
   "CMakeFiles/text_editor.dir/highlighter.cpp.o"
   "CMakeFiles/text_editor.dir/main.cpp.o"
   "CMakeFiles/text_editor.dir/mainwindow.cpp.o"

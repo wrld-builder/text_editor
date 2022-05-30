@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../../advancedmenu.h
+QMainWindow
+-
+
 ../../highlighter.h
 QSyntaxHighlighter
 -
@@ -36,6 +40,12 @@ QFile
 QFileDialog
 -
 QDebug
+-
+QPlainTextEdit
+-
+QTabWidget
+-
+QPushButton
 -
 highlighter.h
 ../../highlighter.h
@@ -5346,6 +5356,10 @@ QtWebEngineCore/qwebenginehttprequest.h
 qapplication.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qapplication.h
 
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QCheckBox
+qcheckbox.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qcheckbox.h
+
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QCommonStyle
 qcommonstyle.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qcommonstyle.h
@@ -5357,6 +5371,14 @@ qfiledialog.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QGridLayout
 qgridlayout.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qgridlayout.h
+
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QHBoxLayout
+qboxlayout.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qboxlayout.h
+
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLabel
+qlabel.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qlabel.h
 
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QLayout
 qlayout.h
@@ -5385,6 +5407,10 @@ qscrollerproperties.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QShortcut
 qshortcut.h
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qshortcut.h
+
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QTabWidget
+qtabwidget.h
+/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/qtabwidget.h
 
 /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets/QVBoxLayout
 qboxlayout.h
@@ -6814,6 +6840,24 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qdialog.h
 -
 
+/home/logbaby/cxx/text_editor/advancedmenu.cpp
+advancedmenu.h
+/home/logbaby/cxx/text_editor/advancedmenu.h
+ui_advancedmenu.h
+/home/logbaby/cxx/text_editor/ui_advancedmenu.h
+
+/home/logbaby/cxx/text_editor/advancedmenu.h
+QMainWindow
+-
+
+/home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/moc_advancedmenu.cpp
+advancedmenu.h
+/home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/advancedmenu.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
 /home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/moc_highlighter.cpp
 highlighter.h
 /home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/highlighter.h
@@ -6831,6 +6875,8 @@ QtCore/qmetatype.h
 -
 
 /home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/mocs_compilation.cpp
+EWIEGA46WW/moc_advancedmenu.cpp
+/home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/moc_advancedmenu.cpp
 EWIEGA46WW/moc_highlighter.cpp
 /home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/moc_highlighter.cpp
 EWIEGA46WW/moc_mainwindow.cpp
@@ -6845,8 +6891,6 @@ QVector
 /home/logbaby/cxx/text_editor/main.cpp
 mainwindow.h
 /home/logbaby/cxx/text_editor/mainwindow.h
-highlighter.h
-/home/logbaby/cxx/text_editor/highlighter.h
 QApplication
 -
 
@@ -6881,19 +6925,39 @@ QFileDialog
 -
 QDebug
 -
+QPlainTextEdit
+-
+QTabWidget
+-
+QPushButton
+-
 highlighter.h
 /home/logbaby/cxx/text_editor/highlighter.h
+
+text_editor_autogen/include/ui_advancedmenu.h
+QtCore/QVariant
+-
+QtWidgets/QApplication
+-
+QtWidgets/QCheckBox
+-
+QtWidgets/QGridLayout
+-
+QtWidgets/QHBoxLayout
+-
+QtWidgets/QLabel
+-
+QtWidgets/QMainWindow
+-
+QtWidgets/QWidget
+-
 
 text_editor_autogen/include/ui_mainwindow.h
 QtCore/QVariant
 -
 QtWidgets/QApplication
 -
-QtWidgets/QGridLayout
--
 QtWidgets/QMainWindow
--
-QtWidgets/QPlainTextEdit
 -
 QtWidgets/QWidget
 -

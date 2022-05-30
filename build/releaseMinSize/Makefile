@@ -136,6 +136,33 @@ text_editor_autogen/fast:
 	$(MAKE) -f CMakeFiles/text_editor_autogen.dir/build.make CMakeFiles/text_editor_autogen.dir/build
 .PHONY : text_editor_autogen/fast
 
+advancedmenu.o: advancedmenu.cpp.o
+
+.PHONY : advancedmenu.o
+
+# target to build an object file
+advancedmenu.cpp.o:
+	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/advancedmenu.cpp.o
+.PHONY : advancedmenu.cpp.o
+
+advancedmenu.i: advancedmenu.cpp.i
+
+.PHONY : advancedmenu.i
+
+# target to preprocess a source file
+advancedmenu.cpp.i:
+	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/advancedmenu.cpp.i
+.PHONY : advancedmenu.cpp.i
+
+advancedmenu.s: advancedmenu.cpp.s
+
+.PHONY : advancedmenu.s
+
+# target to generate assembly for a file
+advancedmenu.cpp.s:
+	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/advancedmenu.cpp.s
+.PHONY : advancedmenu.cpp.s
+
 highlighter.o: highlighter.cpp.o
 
 .PHONY : highlighter.o
@@ -254,6 +281,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... text_editor"
 	@echo "... text_editor_autogen"
+	@echo "... advancedmenu.o"
+	@echo "... advancedmenu.i"
+	@echo "... advancedmenu.s"
 	@echo "... highlighter.o"
 	@echo "... highlighter.i"
 	@echo "... highlighter.s"

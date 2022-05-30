@@ -8,6 +8,11 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/logbaby/cxx/text_editor/advancedmenu.h",
+			"MU",
+			"EWIEGA46WW/moc_advancedmenu.cpp"
+		],
+		[
 			"/home/logbaby/cxx/text_editor/highlighter.h",
 			"MU",
 			"EWIEGA46WW/moc_highlighter.cpp"
@@ -91,6 +96,7 @@
 	"SETTINGS_FILE" : "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/logbaby/cxx/text_editor/advancedmenu.cpp", "MU" ],
 		[ "/home/logbaby/cxx/text_editor/highlighter.cpp", "MU" ],
 		[ "/home/logbaby/cxx/text_editor/main.cpp", "MU" ],
 		[ "/home/logbaby/cxx/text_editor/mainwindow.cpp", "MU" ]

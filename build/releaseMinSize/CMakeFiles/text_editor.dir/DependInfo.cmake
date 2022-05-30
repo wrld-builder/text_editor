@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/logbaby/cxx/text_editor/advancedmenu.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/advancedmenu.cpp.o"
   "/home/logbaby/cxx/text_editor/highlighter.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/highlighter.cpp.o"
   "/home/logbaby/cxx/text_editor/main.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/main.cpp.o"
   "/home/logbaby/cxx/text_editor/mainwindow.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/mainwindow.cpp.o"
