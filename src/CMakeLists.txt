@@ -23,12 +23,15 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         highlighter.cpp
+        advancedmenu.cpp
 )
 
 set(PROJECT_RESOURCES
     mainwindow.ui
+    advancedmenu.ui
     mainwindow.h
     highlighter.h
+    advancedmenu.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

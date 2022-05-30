@@ -13,6 +13,9 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QDebug>
+#include <QPlainTextEdit>
+#include <QTabWidget>
+#include <QPushButton>
 
 #include "highlighter.h"
 
@@ -32,7 +35,7 @@ struct HotKeys {
 
     QShortcut *save_file = nullptr;
     QShortcut *open_file = nullptr;
-    QShortcut *tab = nullptr;
+    QShortcut *add_new_tab = nullptr;
 };
 
 struct Highlighter {
@@ -49,12 +52,16 @@ public:
     ~MainWindow();
 
 protected:
-    void setRightTab();
+    QString tab_title = nullptr;
+    void setRightTab(QPlainTextEdit*);
 
 private:
     Ui::MainWindow *ui;
     QPushButton *launch_button = nullptr;
     QLineEdit *launch_finding_line_edit = nullptr;
+    QPlainTextEdit *editor_text = nullptr;
+    QGridLayout *gridLayout = nullptr;
+    QTabWidget *editor_tabs = nullptr;
 
     HotKeys hot_key;
     Highlighter highlight;
@@ -70,5 +77,7 @@ private slots:
 
     void saveFile();
     void openFile();
+    void add_new_tab();
+    void deleteTab(int);
 };
 #endif // MAINWINDOW_H

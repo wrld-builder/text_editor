@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "highlighter.h"
 
 #include <QApplication>
 

@@ -7,10 +7,19 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    setRightTab();
+    gridLayout = new QGridLayout(ui->centralwidget);
+    editor_tabs = new QTabWidget;
+    editor_text = new QPlainTextEdit(editor_tabs);
 
-    highlight.m_syntaxHighLighter = new SyntaxHighlighter(ui->plainTextEdit->document());
-    highlight.m_htmlHightLighter = new HtmlHighLighter(ui->plainTextEdit->document());
+    editor_tabs->addTab(editor_text, "untitled");
+    editor_tabs->setTabsClosable(true);
+    editor_tabs->setMovable(true);
+
+    gridLayout->addWidget(editor_tabs);
+    setRightTab(editor_text);
+
+    highlight.m_syntaxHighLighter = new SyntaxHighlighter(editor_text->document());
+    highlight.m_htmlHightLighter = new HtmlHighLighter(editor_text->document());
 
     hot_key.add_launch_button = new QShortcut(this);
     hot_key.add_launch_button->setKey(Qt::CTRL + Qt::Key_L);
@@ -30,12 +39,17 @@ MainWindow::MainWindow(QWidget *parent)
     hot_key.open_file = new QShortcut(this);
     hot_key.open_file->setKey(Qt::CTRL + Qt::Key_O);
 
+    hot_key.add_new_tab = new QShortcut(this);
+    hot_key.add_new_tab->setKey(Qt::CTRL + Qt::Key_T);
+
     connect(hot_key.add_launch_button, SIGNAL(activated()), this, SLOT(addLaunchButton()));
     connect(hot_key.hide_launch_button, SIGNAL(activated()), this, SLOT(hideLaunchButton()));
     connect(hot_key.find_words, SIGNAL(activated()), this, SLOT(launchFindWords()));
     connect(hot_key.hide_find_words, SIGNAL(activated()), this, SLOT(hideFindWords()));
     connect(hot_key.save_file, SIGNAL(activated()), this, SLOT(saveFile()));
     connect(hot_key.open_file, SIGNAL(activated()), this, SLOT(openFile()));
+    connect(hot_key.add_new_tab, SIGNAL(activated()), this, SLOT(add_new_tab()));
+    connect(editor_tabs, &QTabWidget::tabCloseRequested, this, &MainWindow::deleteTab);
 }
 
 MainWindow::~MainWindow()
@@ -47,7 +61,7 @@ void MainWindow::addLaunchButton() {
     if(hot_key.isLaunchButtonAdded == false) {
         launch_button = new QPushButton(this);
         launch_button->setText("LAUNCH SITE");
-        ui->gridLayout->addWidget(launch_button);
+        gridLayout->addWidget(launch_button);
 
         hot_key.isLaunchButtonAdded = true;
         connect(launch_button, SIGNAL(clicked()), this, SLOT(launchButtonClicked()));
@@ -55,7 +69,7 @@ void MainWindow::addLaunchButton() {
 }
 
 void MainWindow::launchButtonClicked() {
-    auto htmlCode = ui->plainTextEdit->toPlainText();
+    auto htmlCode = dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->toPlainText();
     auto *viewCode = new QWebEngineView();
     viewCode->setHtml(htmlCode);
 
@@ -76,7 +90,7 @@ void MainWindow::hideLaunchButton() {
 void MainWindow::launchFindWords() {
     if(hot_key.isLaunchLineEditAdded == false) {
         launch_finding_line_edit = new QLineEdit(this);
-        ui->gridLayout->addWidget(launch_finding_line_edit);
+        gridLayout->addWidget(launch_finding_line_edit);
 
         hot_key.isLaunchLineEditAdded = true;
         connect(launch_finding_line_edit, SIGNAL(editingFinished()), this, SLOT(findWords()));
@@ -110,7 +124,7 @@ void MainWindow::saveFile() {
         QFile out(filename);
         if( out.open(QIODevice::WriteOnly)) {
             QTextStream stream( &out );
-            stream << QObject::trUtf8(ui->plainTextEdit->toPlainText().toStdString().c_str());
+            stream << QObject::trUtf8(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->toPlainText().toStdString().c_str());
             out.close();
         }
 
@@ -134,9 +148,27 @@ void MainWindow::openFile() {
     QFile in(filename);
     in.open(QIODevice::ReadOnly | QIODevice::Text);
     auto text = in.readAll();
-    ui->plainTextEdit->setPlainText(text);
+
+    dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->setPlainText(text);
+
+    tab_title = in.fileName();
+    editor_tabs->setTabText(editor_tabs->currentIndex(), in.fileName());
 }
 
-void MainWindow::setRightTab() {
-    ui->plainTextEdit->setTabStopDistance(QFontMetricsF(ui->plainTextEdit->font()).horizontalAdvance(' ') * 4);
+void MainWindow::setRightTab(QPlainTextEdit* edit) {
+    edit->setTabStopDistance(QFontMetricsF(edit->font()).horizontalAdvance(' ') * 4);
+}
+
+void MainWindow::add_new_tab() {
+    auto *text_editor = new QPlainTextEdit(this);
+    editor_tabs->addTab(text_editor, "untilted");
+    setRightTab(text_editor);
+
+    highlight.m_syntaxHighLighter = new SyntaxHighlighter(text_editor->document());
+    highlight.m_htmlHightLighter = new HtmlHighLighter(text_editor->document());
+}
+
+void MainWindow::deleteTab(int indexToRemove) {
+    auto widgetToDelete = editor_tabs->widget(indexToRemove);
+    delete widgetToDelete;
 }

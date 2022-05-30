@@ -211,11 +211,7 @@ void SyntaxHighlighter::highlightBlock( const QString& text ) {
     fmt.setBackground( Qt::yellow );
 
     const int LEN = m_highlightedString.length();
-    for(
-        int index = text.indexOf( m_highlightedString );
-        0 <= index;
-        index = text.indexOf( m_highlightedString, index + LEN )
-    ) {
+    for(int index = text.indexOf( m_highlightedString ); 0 <= index; index = text.indexOf( m_highlightedString, index + LEN )) {
         setFormat( index, LEN, fmt );
     }
 }
