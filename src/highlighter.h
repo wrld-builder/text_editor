@@ -3,6 +3,10 @@
 
 #include <QSyntaxHighlighter>
 #include <QVector>
+#include <fstream>
+#include <string>
+
+#include "advancedmenu.h"
 
 class HtmlHighLighter : public QSyntaxHighlighter
 {
@@ -13,6 +17,7 @@ public:
 
 protected:
     void highlightBlock(const QString &text) Q_DECL_OVERRIDE;
+    void setKeyWords(QStringList&, const char*);
 
 private:
     enum class States {
@@ -42,6 +47,8 @@ private:
     QRegExp quotes;
     QTextCharFormat quotationFormat;
     QTextCharFormat tagsFormat;
+
+    AdvancedMenu advanced_menu;
 };
 
 class SyntaxHighlighter : public QSyntaxHighlighter {

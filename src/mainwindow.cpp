@@ -16,7 +16,9 @@ MainWindow::MainWindow(QWidget *parent)
     editor_tabs->setMovable(true);
 
     gridLayout->addWidget(editor_tabs);
+
     setRightTab(editor_text);
+    setStyleMainWindowCheck();
 
     highlight.m_syntaxHighLighter = new SyntaxHighlighter(editor_text->document());
     highlight.m_htmlHightLighter = new HtmlHighLighter(editor_text->document());
@@ -168,11 +170,17 @@ void MainWindow::deleteTab(int indexToRemove) {
     delete widgetToDelete;
 }
 
-void MainWindow::setTabsShortTitleCheck(QFile &in) {
+inline void MainWindow::setTabsShortTitleCheck(QFile &in) {
     if(advanced_menu.getStateTabsShortTitle() == true) {
         QFileInfo fInfo(in.fileName());
         editor_tabs->setTabText(editor_tabs->currentIndex(), fInfo.fileName());
     } else {
         editor_tabs->setTabText(editor_tabs->currentIndex(), in.fileName());
+    }
+}
+
+inline void MainWindow::setStyleMainWindowCheck() {
+    if(!advanced_menu.getStateHexBackground().empty()) {
+        ui->centralwidget->setStyleSheet(("background-color: " + advanced_menu.getStateHexBackground()).c_str());
     }
 }

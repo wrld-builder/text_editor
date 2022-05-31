@@ -55,7 +55,8 @@ public:
 protected:
     QString tab_title = nullptr;
     inline void setRightTab(QPlainTextEdit*);
-    void setTabsShortTitleCheck(QFile&);
+    inline void setTabsShortTitleCheck(QFile&);
+    inline void setStyleMainWindowCheck();
 
 private:
     Ui::MainWindow *ui;

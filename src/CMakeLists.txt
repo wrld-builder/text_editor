@@ -18,6 +18,7 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS WebEngineWidgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS WebEngineCore REQUIRED)
+
 add_subdirectory(nlohmann_json)
 
 set(PROJECT_SOURCES
@@ -27,29 +28,34 @@ set(PROJECT_SOURCES
     advancedmenu.cpp
 )
 
-set(PROJECT_RESOURCES
-    mainwindow.ui
-    config.json
+set(PROJECT_HEADERS
     mainwindow.h
     highlighter.h
     advancedmenu.h
 )
 
+set(PROJECT_RESOURCES
+    mainwindow.ui
+    config.json
+    res/keywords_html_open
+    res/keywords_html_close
+)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(text_editor
         MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
+        ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_RESOURCES}
     )
 
 else()
     if(ANDROID)
         add_library(text_editor SHARED
-            ${PROJECT_SOURCES} ${PROJECT_RESOURCES}
+            ${PROJECT_SOURCES} ${PROJECT_RESOURCES} ${PROJECT_HEADERS}
         )
 
     else()
         add_executable(text_editor
-            ${PROJECT_SOURCES} ${PROJECT_RESOURCES}
+            ${PROJECT_SOURCES} ${PROJECT_RESOURCES} ${PROJECT_HEADERS}
         )
     endif()
 endif()

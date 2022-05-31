@@ -2,5 +2,15 @@
     "tabs": {
         "movable": true,
         "short_title": true
+    },
+
+    "mainwindow": {
+        "background_color_hex": "#ffffff"
+    },
+
+    "html": {
+        "edge_tag_format_foreground": "#1a5e34",
+        "inside_tag_format_foreground": "#1a992d",
+        "tags_format_foreground": "#19806f"
     }
 }
