@@ -9,6 +9,8 @@
 ../../advancedmenu.h
 fstream
 -
+string
+-
 nlohmann/json.hpp
 ../../nlohmann/json.hpp
 
@@ -17,6 +19,12 @@ QSyntaxHighlighter
 -
 QVector
 -
+fstream
+-
+string
+-
+advancedmenu.h
+../../advancedmenu.h
 
 ../../mainwindow.h
 QMainWindow
@@ -7221,6 +7229,8 @@ advancedmenu.h
 /home/logbaby/cxx/text_editor/advancedmenu.h
 fstream
 -
+string
+-
 nlohmann/json.hpp
 /home/logbaby/cxx/text_editor/nlohmann/json.hpp
 
@@ -7246,11 +7256,21 @@ EWIEGA46WW/moc_highlighter.cpp
 EWIEGA46WW/moc_mainwindow.cpp
 /home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/EWIEGA46WW/moc_mainwindow.cpp
 
+/home/logbaby/cxx/text_editor/highlighter.cpp
+highlighter.h
+/home/logbaby/cxx/text_editor/highlighter.h
+
 /home/logbaby/cxx/text_editor/highlighter.h
 QSyntaxHighlighter
 -
 QVector
 -
+fstream
+-
+string
+-
+advancedmenu.h
+/home/logbaby/cxx/text_editor/advancedmenu.h
 
 /home/logbaby/cxx/text_editor/main.cpp
 mainwindow.h

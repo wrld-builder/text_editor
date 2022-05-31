@@ -5,6 +5,7 @@ CMakeFiles/text_editor.dir/advancedmenu.cpp.o: ../../nlohmann_json/single_includ
 CMakeFiles/text_editor.dir/advancedmenu.cpp.o: ../../advancedmenu.cpp
 CMakeFiles/text_editor.dir/advancedmenu.cpp.o: ../../advancedmenu.h
 
+CMakeFiles/text_editor.dir/highlighter.cpp.o: ../../nlohmann_json/single_include/nlohmann/json.hpp
 CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/QVector
 CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qalgorithms.h
 CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtCore/qarraydata.h
@@ -111,6 +112,7 @@ CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gc
 CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qvector2d.h
 CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs.h
 CMakeFiles/text_editor.dir/highlighter.cpp.o: /home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtGui/qwindowdefs_win.h
+CMakeFiles/text_editor.dir/highlighter.cpp.o: ../../advancedmenu.h
 CMakeFiles/text_editor.dir/highlighter.cpp.o: ../../highlighter.cpp
 CMakeFiles/text_editor.dir/highlighter.cpp.o: ../../highlighter.h
 
