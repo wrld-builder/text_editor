@@ -42,13 +42,13 @@ MainWindow::MainWindow(QWidget *parent)
     hot_key.add_new_tab = new QShortcut(this);
     hot_key.add_new_tab->setKey(Qt::CTRL + Qt::Key_T);
 
-    connect(hot_key.add_launch_button, SIGNAL(activated()), this, SLOT(addLaunchButton()));
-    connect(hot_key.hide_launch_button, SIGNAL(activated()), this, SLOT(hideLaunchButton()));
-    connect(hot_key.find_words, SIGNAL(activated()), this, SLOT(launchFindWords()));
-    connect(hot_key.hide_find_words, SIGNAL(activated()), this, SLOT(hideFindWords()));
-    connect(hot_key.save_file, SIGNAL(activated()), this, SLOT(saveFile()));
-    connect(hot_key.open_file, SIGNAL(activated()), this, SLOT(openFile()));
-    connect(hot_key.add_new_tab, SIGNAL(activated()), this, SLOT(add_new_tab()));
+    connect(hot_key.add_launch_button, &QShortcut::activated, this, &MainWindow::addLaunchButton);
+    connect(hot_key.hide_launch_button, &QShortcut::activated, this, &MainWindow::hideLaunchButton);
+    connect(hot_key.find_words, &QShortcut::activated, this, &MainWindow::launchFindWords);
+    connect(hot_key.hide_find_words, &QShortcut::activated, this, &MainWindow::hideFindWords);
+    connect(hot_key.save_file, &QShortcut::activated, this, &MainWindow::saveFile);
+    connect(hot_key.open_file, &QShortcut::activated, this, &MainWindow::openFile);
+    connect(hot_key.add_new_tab, &QShortcut::activated, this, &MainWindow::add_new_tab);
     connect(editor_tabs, &QTabWidget::tabCloseRequested, this, &MainWindow::deleteTab);
 }
 
@@ -113,27 +113,24 @@ void MainWindow::hideFindWords() {
 }
 
 void MainWindow::saveFile() {
-    QString filename = QFileDialog::getSaveFileName(
-                        this,
-                        tr("Сохранить файл"),
-                        QDir::currentPath(),
-                        nullptr);
-
+    QString filename = QFileDialog::getSaveFileName(this, tr("Сохранить файл"), QDir::currentPath(), nullptr);
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+    QFile out(filename);
 
-        QFile out(filename);
-        if( out.open(QIODevice::WriteOnly)) {
-            QTextStream stream( &out );
-            stream << QObject::trUtf8(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->toPlainText().toStdString().c_str());
-            out.close();
-        }
+    if(out.open(QIODevice::WriteOnly)) {
+       QTextStream stream( &out );
+       stream << QObject::trUtf8(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->toPlainText().toStdString().c_str());
+       out.close();
+    }
 
-        QFile in(filename);
-        if( in.open(QIODevice::ReadOnly)) {
-            QTextStream stream(&in);
-            qDebug() << stream.readAll();
-            in.close();
-        }
+    QFile in(filename);
+    if(in.open(QIODevice::ReadOnly)) {
+       QTextStream stream(&in);
+       qDebug() << stream.readAll();
+       in.close();
+    }
+
+    setTabsShortTitleCheck(in);
 }
 
 void MainWindow::openFile() {
@@ -150,12 +147,10 @@ void MainWindow::openFile() {
     auto text = in.readAll();
 
     dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->setPlainText(text);
-
-    tab_title = in.fileName();
-    editor_tabs->setTabText(editor_tabs->currentIndex(), in.fileName());
+    setTabsShortTitleCheck(in);
 }
 
-void MainWindow::setRightTab(QPlainTextEdit* edit) {
+inline void MainWindow::setRightTab(QPlainTextEdit* edit) {
     edit->setTabStopDistance(QFontMetricsF(edit->font()).horizontalAdvance(' ') * 4);
 }
 
@@ -171,4 +166,13 @@ void MainWindow::add_new_tab() {
 void MainWindow::deleteTab(int indexToRemove) {
     auto widgetToDelete = editor_tabs->widget(indexToRemove);
     delete widgetToDelete;
+}
+
+void MainWindow::setTabsShortTitleCheck(QFile &in) {
+    if(advanced_menu.getStateTabsShortTitle() == true) {
+        QFileInfo fInfo(in.fileName());
+        editor_tabs->setTabText(editor_tabs->currentIndex(), fInfo.fileName());
+    } else {
+        editor_tabs->setTabText(editor_tabs->currentIndex(), in.fileName());
+    }
 }

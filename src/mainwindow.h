@@ -18,6 +18,7 @@
 #include <QPushButton>
 
 #include "highlighter.h"
+#include "advancedmenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -48,12 +49,13 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 protected:
     QString tab_title = nullptr;
-    void setRightTab(QPlainTextEdit*);
+    inline void setRightTab(QPlainTextEdit*);
+    void setTabsShortTitleCheck(QFile&);
 
 private:
     Ui::MainWindow *ui;
@@ -65,6 +67,7 @@ private:
 
     HotKeys hot_key;
     Highlighter highlight;
+    AdvancedMenu advanced_menu;
 
 private slots:
     void addLaunchButton();

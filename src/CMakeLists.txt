@@ -18,17 +18,18 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS WebEngineWidgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS WebEngineCore REQUIRED)
+add_subdirectory(nlohmann_json)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        highlighter.cpp
-        advancedmenu.cpp
+    main.cpp
+    mainwindow.cpp
+    highlighter.cpp
+    advancedmenu.cpp
 )
 
 set(PROJECT_RESOURCES
     mainwindow.ui
-    advancedmenu.ui
+    config.json
     mainwindow.h
     highlighter.h
     advancedmenu.h
@@ -56,6 +57,7 @@ endif()
 target_link_libraries(text_editor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(text_editor PRIVATE Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
 target_link_libraries(text_editor PRIVATE Qt${QT_VERSION_MAJOR}::WebEngineCore)
+target_link_libraries(text_editor PRIVATE nlohmann_json::nlohmann_json)
 
 set_target_properties(text_editor PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
