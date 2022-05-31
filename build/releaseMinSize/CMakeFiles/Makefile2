@@ -54,19 +54,39 @@ CMAKE_BINARY_DIR = /home/logbaby/cxx/text_editor/build/releaseMinSize
 
 # The main recursive "all" target.
 all: CMakeFiles/text_editor.dir/all
+all: nlohmann_json/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: nlohmann_json/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/text_editor.dir/clean
 clean: CMakeFiles/text_editor_autogen.dir/clean
+clean: nlohmann_json/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory nlohmann_json
+
+# Recursive "all" directory target.
+nlohmann_json/all:
+
+.PHONY : nlohmann_json/all
+
+# Recursive "preinstall" directory target.
+nlohmann_json/preinstall:
+
+.PHONY : nlohmann_json/preinstall
+
+# Recursive "clean" directory target.
+nlohmann_json/clean:
+
+.PHONY : nlohmann_json/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/text_editor.dir

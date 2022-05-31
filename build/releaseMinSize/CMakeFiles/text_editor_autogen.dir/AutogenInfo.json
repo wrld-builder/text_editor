@@ -52,6 +52,7 @@
 	[
 		"/home/logbaby/cxx/text_editor/build/releaseMinSize",
 		"/home/logbaby/cxx/text_editor",
+		"/home/logbaby/cxx/text_editor/nlohmann_json/single_include",
 		"/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include",
 		"/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets",
 		"/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtGui",

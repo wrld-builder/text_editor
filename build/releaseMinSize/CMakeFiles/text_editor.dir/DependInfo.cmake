@@ -33,6 +33,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
   "../../"
   "text_editor_autogen/include"
+  "../../nlohmann_json/single_include"
   "/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include"
   "/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtWidgets"
   "/home/logbaby/Qt5.12.12/5.12.12/gcc_64/include/QtGui"

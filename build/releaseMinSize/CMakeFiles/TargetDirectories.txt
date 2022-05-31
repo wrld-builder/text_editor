@@ -2,3 +2,5 @@
 /home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/edit_cache.dir
 /home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir
 /home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor_autogen.dir
+/home/logbaby/cxx/text_editor/build/releaseMinSize/nlohmann_json/CMakeFiles/edit_cache.dir
+/home/logbaby/cxx/text_editor/build/releaseMinSize/nlohmann_json/CMakeFiles/rebuild_cache.dir
