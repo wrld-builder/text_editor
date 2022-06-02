@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/logbaby/cxx/text_editor/highlighter.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/highlighter.cpp.o"
   "/home/logbaby/cxx/text_editor/main.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/main.cpp.o"
   "/home/logbaby/cxx/text_editor/mainwindow.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/mainwindow.cpp.o"
+  "/home/logbaby/cxx/text_editor/pythonhighlighter.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/pythonhighlighter.cpp.o"
   "/home/logbaby/cxx/text_editor/build/releaseMinSize/text_editor_autogen/mocs_compilation.cpp" "/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles/text_editor.dir/text_editor_autogen/mocs_compilation.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")

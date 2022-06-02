@@ -21,6 +21,11 @@
 			"/home/logbaby/cxx/text_editor/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp"
+		],
+		[
+			"/home/logbaby/cxx/text_editor/pythonhighlighter.h",
+			"MU",
+			"EWIEGA46WW/moc_pythonhighlighter.cpp"
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -100,7 +105,8 @@
 		[ "/home/logbaby/cxx/text_editor/advancedmenu.cpp", "MU" ],
 		[ "/home/logbaby/cxx/text_editor/highlighter.cpp", "MU" ],
 		[ "/home/logbaby/cxx/text_editor/main.cpp", "MU" ],
-		[ "/home/logbaby/cxx/text_editor/mainwindow.cpp", "MU" ]
+		[ "/home/logbaby/cxx/text_editor/mainwindow.cpp", "MU" ],
+		[ "/home/logbaby/cxx/text_editor/pythonhighlighter.cpp", "MU" ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

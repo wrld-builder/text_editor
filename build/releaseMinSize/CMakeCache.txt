@@ -324,9 +324,6 @@ Qt5_DIR:PATH=/home/logbaby/Qt5.12.12/5.12.12/gcc_64/lib/cmake/Qt5
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=/home/logbaby/cxx/text_editor/build/releaseMinSize/nlohmann_json
 
-//The directory containing a CMake configuration file for nlohmann_json.
-nlohmann_json_DIR:PATH=nlohmann_json_DIR-NOTFOUND
-
 //Value Computed by CMake
 nlohmann_json_SOURCE_DIR:STATIC=/home/logbaby/cxx/text_editor/nlohmann_json
 

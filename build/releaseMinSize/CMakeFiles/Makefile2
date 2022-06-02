@@ -95,12 +95,12 @@ nlohmann_json/clean:
 CMakeFiles/text_editor.dir/all: CMakeFiles/text_editor_autogen.dir/all
 	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/depend
 	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target text_editor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target text_editor"
 .PHONY : CMakeFiles/text_editor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/text_editor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/text_editor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles 0
 .PHONY : CMakeFiles/text_editor.dir/rule
@@ -122,7 +122,7 @@ CMakeFiles/text_editor.dir/clean:
 CMakeFiles/text_editor_autogen.dir/all:
 	$(MAKE) -f CMakeFiles/text_editor_autogen.dir/build.make CMakeFiles/text_editor_autogen.dir/depend
 	$(MAKE) -f CMakeFiles/text_editor_autogen.dir/build.make CMakeFiles/text_editor_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles --progress-num=7 "Built target text_editor_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/logbaby/cxx/text_editor/build/releaseMinSize/CMakeFiles --progress-num=8 "Built target text_editor_autogen"
 .PHONY : CMakeFiles/text_editor_autogen.dir/all
 
 # Build rule for subdir invocation for target.

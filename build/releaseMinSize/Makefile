@@ -244,6 +244,33 @@ mainwindow.cpp.s:
 	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+pythonhighlighter.o: pythonhighlighter.cpp.o
+
+.PHONY : pythonhighlighter.o
+
+# target to build an object file
+pythonhighlighter.cpp.o:
+	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/pythonhighlighter.cpp.o
+.PHONY : pythonhighlighter.cpp.o
+
+pythonhighlighter.i: pythonhighlighter.cpp.i
+
+.PHONY : pythonhighlighter.i
+
+# target to preprocess a source file
+pythonhighlighter.cpp.i:
+	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/pythonhighlighter.cpp.i
+.PHONY : pythonhighlighter.cpp.i
+
+pythonhighlighter.s: pythonhighlighter.cpp.s
+
+.PHONY : pythonhighlighter.s
+
+# target to generate assembly for a file
+pythonhighlighter.cpp.s:
+	$(MAKE) -f CMakeFiles/text_editor.dir/build.make CMakeFiles/text_editor.dir/pythonhighlighter.cpp.s
+.PHONY : pythonhighlighter.cpp.s
+
 text_editor_autogen/mocs_compilation.o: text_editor_autogen/mocs_compilation.cpp.o
 
 .PHONY : text_editor_autogen/mocs_compilation.o
@@ -293,6 +320,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... pythonhighlighter.o"
+	@echo "... pythonhighlighter.i"
+	@echo "... pythonhighlighter.s"
 	@echo "... text_editor_autogen/mocs_compilation.o"
 	@echo "... text_editor_autogen/mocs_compilation.i"
 	@echo "... text_editor_autogen/mocs_compilation.s"
