@@ -207,13 +207,17 @@ void MainWindow::setHighlightingCheck(QFile& in) {
         highlight.m_syntaxHighLighter = new SyntaxHighlighter(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
         highlight.m_htmlHightLighter = new HtmlHighLighter(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
     } else if(in.fileName().toStdString().substr(in.fileName().toStdString().length() - 3, in.fileName().toStdString().length()) == ".py") {
-        python_code_highlighter_cycle.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
-        setHighlightingLang_py_cycle("res/py/py_cycle");
-
-        /*std::thread th([this]() {
-                    python_code_highlighter_statements.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
-                    setHighlightingLang_py_statements("res/py/py_statements");
+        auto th_1 = std::async(std::launch::async, [this](){
+            python_code_highlighter_cycle.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+            setHighlightingLang_py_cycle("res/py/py_cycle");
         });
-        th.detach();*/
+        th_1.get();
+
+        auto th = std::async(std::launch::async, [this]() {
+             python_code_highlighter_statements.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+             setHighlightingLang_py_statements("res/py/py_statements");
+        });
+
+        th.get();
     }
 }
