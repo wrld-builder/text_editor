@@ -20,9 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     setRightTab(editor_text);
     setStyleMainWindowCheck();
 
-    highlight.m_syntaxHighLighter = new SyntaxHighlighter(editor_text->document());
-    highlight.m_htmlHightLighter = new HtmlHighLighter(editor_text->document());
-
     hot_key.add_launch_button = new QShortcut(this);
     hot_key.add_launch_button->setKey(Qt::CTRL + Qt::Key_L);
 
@@ -133,6 +130,7 @@ void MainWindow::saveFile() {
     }
 
     setTabsShortTitleCheck(in);
+    setHighlightingCheck(in);
 }
 
 void MainWindow::openFile() {
@@ -149,7 +147,9 @@ void MainWindow::openFile() {
     auto text = in.readAll();
 
     dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->setPlainText(text);
+
     setTabsShortTitleCheck(in);
+    setHighlightingCheck(in);
 }
 
 inline void MainWindow::setRightTab(QPlainTextEdit* edit) {
@@ -160,9 +160,6 @@ void MainWindow::add_new_tab() {
     auto *text_editor = new QPlainTextEdit(this);
     editor_tabs->addTab(text_editor, "untilted");
     setRightTab(text_editor);
-
-    highlight.m_syntaxHighLighter = new SyntaxHighlighter(text_editor->document());
-    highlight.m_htmlHightLighter = new HtmlHighLighter(text_editor->document());
 }
 
 void MainWindow::deleteTab(int indexToRemove) {
@@ -182,5 +179,41 @@ inline void MainWindow::setTabsShortTitleCheck(QFile &in) {
 inline void MainWindow::setStyleMainWindowCheck() {
     if(!advanced_menu.getStateHexBackground().empty()) {
         ui->centralwidget->setStyleSheet(("background-color: " + advanced_menu.getStateHexBackground()).c_str());
+    }
+}
+
+void MainWindow::setHighlightingLang_py_cycle(const char* path) {
+    std::ifstream in(path);
+    if(in.is_open()) {
+        std::string textToWrite = "";
+        in >> textToWrite;
+        python_code_highlighter_cycle.setPattern(textToWrite.c_str());
+        in.close();
+    }
+}
+
+void MainWindow::setHighlightingLang_py_statements(const char* path) {
+    std::ifstream in(path);
+    if(in.is_open()) {
+        std::string textToWrite = "";
+        in >> textToWrite;
+        python_code_highlighter_statements.setPattern(textToWrite.c_str());
+        in.close();
+    }
+}
+
+void MainWindow::setHighlightingCheck(QFile& in) {
+    if(in.fileName().toStdString().substr(in.fileName().toStdString().length() - 5, in.fileName().toStdString().length()) == ".html") {
+        highlight.m_syntaxHighLighter = new SyntaxHighlighter(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+        highlight.m_htmlHightLighter = new HtmlHighLighter(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+    } else if(in.fileName().toStdString().substr(in.fileName().toStdString().length() - 3, in.fileName().toStdString().length()) == ".py") {
+        python_code_highlighter_cycle.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+        setHighlightingLang_py_cycle("res/py/py_cycle");
+
+        /*std::thread th([this]() {
+                    python_code_highlighter_statements.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+                    setHighlightingLang_py_statements("res/py/py_statements");
+        });
+        th.detach();*/
     }
 }

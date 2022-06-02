@@ -16,9 +16,10 @@
 #include <QPlainTextEdit>
 #include <QTabWidget>
 #include <QPushButton>
+#include <thread>
 
 #include "highlighter.h"
-#include "advancedmenu.h"
+#include "pythonhighlighter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -55,8 +56,13 @@ public:
 protected:
     QString tab_title = nullptr;
     inline void setRightTab(QPlainTextEdit*);
+
     inline void setTabsShortTitleCheck(QFile&);
     inline void setStyleMainWindowCheck();
+
+    void setHighlightingLang_py_cycle(const char*);
+    void setHighlightingLang_py_statements(const char*);
+    void setHighlightingCheck(QFile&);
 
 private:
     Ui::MainWindow *ui;
@@ -69,6 +75,9 @@ private:
     HotKeys hot_key;
     Highlighter highlight;
     AdvancedMenu advanced_menu;
+
+    PythonHighlighterCycle python_code_highlighter_cycle;
+    PythonHighlighterStatements python_code_highlighter_statements;
 
 private slots:
     void addLaunchButton();

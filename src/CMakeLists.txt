@@ -26,12 +26,14 @@ set(PROJECT_SOURCES
     mainwindow.cpp
     highlighter.cpp
     advancedmenu.cpp
+    pythonhighlighter.cpp
 )
 
 set(PROJECT_HEADERS
     mainwindow.h
     highlighter.h
     advancedmenu.h
+    pythonhighlighter.h
 )
 
 set(PROJECT_RESOURCES
@@ -39,6 +41,9 @@ set(PROJECT_RESOURCES
     config.json
     res/keywords_html_open
     res/keywords_html_close
+    res/py/py_cycle
+    res/py/py_statements
+    res/py/py_words_states
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
