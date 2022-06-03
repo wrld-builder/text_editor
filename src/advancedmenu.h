@@ -19,9 +19,7 @@ public:
     std::string getStateHexInsideTagFormatForeground() const;
     std::string getStateHexTagsFormatForeground() const;
 
-    std::string getStatePythonCycleForegroundColor() const;
-    std::string getStatePythonStatementsForegroundColor() const;
-    std::string getStatePythonStateWordsForegroundColor() const;
+    std::string getStatePythonForegroundColor() const;
 
 protected:
     bool isTabsShortTitle = false;

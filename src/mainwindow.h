@@ -60,8 +60,7 @@ protected:
     inline void setTabsShortTitleCheck(QFile&);
     inline void setStyleMainWindowCheck();
 
-    void setHighlightingLang_py_cycle(const char*);
-    void setHighlightingLang_py_statements(const char*);
+    void setHighlightingLang_py(const char*);
     void setHighlightingCheck(QFile&);
 
 private:
@@ -76,8 +75,7 @@ private:
     Highlighter highlight;
     AdvancedMenu advanced_menu;
 
-    PythonHighlighterCycle python_code_highlighter_cycle;
-    PythonHighlighterStatements python_code_highlighter_statements;
+    PythonHighlighter python_code_highlighter_cycle;
 
 private slots:
     void addLaunchButton();

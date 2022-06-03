@@ -32,14 +32,6 @@ std::string AdvancedMenu::getStateHexTagsFormatForeground() const {
     return config["html"]["tags_format_foreground"];
 }
 
-std::string AdvancedMenu::getStatePythonCycleForegroundColor() const {
-    return config["python"]["cycle_color_foreground"];
-}
-
-std::string AdvancedMenu::getStatePythonStatementsForegroundColor() const {
-    return config["python"]["statements_color_foreground"];
-}
-
-std::string AdvancedMenu::getStatePythonStateWordsForegroundColor() const {
-    return config["python"]["state_words_color_foreground"];
+std::string AdvancedMenu::getStatePythonForegroundColor() const {
+    return config["python"]["color_foreground"];
 }

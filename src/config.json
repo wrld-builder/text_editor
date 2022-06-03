@@ -15,8 +15,6 @@
     },
 
     "python": {
-        "cycle_color_foreground": "#0087a6",
-        "statements_color_foreground": "#d40427",
-        "state_words_color_foreground": "#d4a10b"
+        "color_foreground": "#d40427"
     }
 }

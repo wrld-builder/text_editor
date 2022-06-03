@@ -182,22 +182,13 @@ inline void MainWindow::setStyleMainWindowCheck() {
     }
 }
 
-void MainWindow::setHighlightingLang_py_cycle(const char* path) {
+void MainWindow::setHighlightingLang_py(const char* path) {
     std::ifstream in(path);
     if(in.is_open()) {
         std::string textToWrite = "";
         in >> textToWrite;
+        qDebug() << textToWrite.c_str();
         python_code_highlighter_cycle.setPattern(textToWrite.c_str());
-        in.close();
-    }
-}
-
-void MainWindow::setHighlightingLang_py_statements(const char* path) {
-    std::ifstream in(path);
-    if(in.is_open()) {
-        std::string textToWrite = "";
-        in >> textToWrite;
-        python_code_highlighter_statements.setPattern(textToWrite.c_str());
         in.close();
     }
 }
@@ -207,17 +198,7 @@ void MainWindow::setHighlightingCheck(QFile& in) {
         highlight.m_syntaxHighLighter = new SyntaxHighlighter(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
         highlight.m_htmlHightLighter = new HtmlHighLighter(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
     } else if(in.fileName().toStdString().substr(in.fileName().toStdString().length() - 3, in.fileName().toStdString().length()) == ".py") {
-        auto th_1 = std::async(std::launch::async, [this](){
-            python_code_highlighter_cycle.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
-            setHighlightingLang_py_cycle("res/py/py_cycle");
-        });
-        th_1.get();
-
-        auto th = std::async(std::launch::async, [this]() {
-             python_code_highlighter_statements.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
-             setHighlightingLang_py_statements("res/py/py_statements");
-        });
-
-        th.get();
+        python_code_highlighter_cycle.setDocument(dynamic_cast<QPlainTextEdit*>(editor_tabs->currentWidget())->document());
+        setHighlightingLang_py("res/py/py");
     }
 }
